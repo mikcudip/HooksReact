@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { CalculoPesadoApp } from "./components/CalculoPesadoApp";
+import { CalculoPesadoComponent } from "./components/CalculoPesadoComponent";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <CalculoPesadoApp />
+    <CalculoPesadoComponent />
   </StrictMode>,
 );

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useState } from "react";
 
-export const CounterApp = () => {
+export const CounterComponent = () => {
   const [count, setCount] = useState(0);
   const countRef = useRef(0);
   const increment = () => {

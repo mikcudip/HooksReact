@@ -1,11 +1,20 @@
-import { FormsApp } from "./components/FormsApp";
+import { CalculoPesadoComponent } from "./components/CalculoPesadoComponent";
+import { CounterComponent } from "./components/CounterComponent";
+import { FetchComponent } from "./components/FetchComponent";
+import { FormsComponent } from "./components/FormsComponent";
 
 export const HooksApp = () => {
   return (
     <>
       <h1>Aplicación de Hooks</h1>
       <hr />
-      <FormsApp />
+      <FetchComponent />
+      <hr />
+      <CounterComponent />
+      <hr />
+      <FormsComponent />
+      <hr />
+      <CalculoPesadoComponent />
     </>
   );
 };
