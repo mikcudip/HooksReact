@@ -3,6 +3,7 @@ import { CallbackComponent } from "./components/CallbackComponent";
 import { CounterComponent } from "./components/CounterComponent";
 import { FetchComponent } from "./components/FetchComponent";
 import { FormsComponent } from "./components/FormsComponent";
+import { TodoComponent } from "./components/TodoComponent";
 
 export const HooksApp = () => {
   return (
@@ -15,9 +16,11 @@ export const HooksApp = () => {
       <hr />
       <FormsComponent />
       <hr />
-      <CalculoPesadoComponent /> */}
+      <CalculoPesadoComponent />
       <hr />
-      <CallbackComponent />
+      <CallbackComponent /> */}
+      <hr />
+      <TodoComponent />
     </>
   );
 };
