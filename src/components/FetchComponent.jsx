@@ -13,8 +13,8 @@ export const FetchComponent = () => {
   };
 
   useEffect(() => {
-    // fetchData(url, "GET");
-    fetchData(url, "POST", body);
+    fetchData(url, "GET");
+    // fetchData(url, "POST", body);
     // fetchData(url, 'PUT', body)
     // fetchData(url, 'DELETE')
   }, []);
