@@ -1,29 +1,10 @@
 import { useReducer } from "react";
 import { useForm } from "../hooks/useForm";
+import { useDispatch, useSelector } from "react-redux";
 
 export const TodoComponent = () => {
-  const initialState = [{ id: 1, name: "Tarea 1", isFinalized: false }];
-  const newTask = [{ id: 2, name: "Tarea 2", isFinalized: false }];
-  const taskToEdit = [{ id: 1, name: "Tarea 3", isFinalized: false }];
-  const taskReducer = (state = initialState, action = {}) => {
-    switch (action.type) {
-      case "[TAREAS] Agregar tarea":
-        return [...state, action.payload];
-      case "[TAREAS] Finalizar tarea":
-        return state.map((task) =>
-          task.id === action.payload
-            ? { ...task, isFinalized: !task.isFinalized }
-            : task,
-        );
-      case "[TAREAS] Eliminar tarea":
-        return state.filter((task) => task.id !== action.payload);
-      case "[TAREAS] Borrar tareas":
-        return [];
-      default:
-        break;
-    }
-    return state;
-  };
+  const tasks = useSelector((state) => state);
+  const dispatch = useDispatch();
   const addTaskInput = (event) => {
     event.preventDefault();
     if (tarea.trim() == "") return;
@@ -37,7 +18,6 @@ export const TodoComponent = () => {
       payload: newTask,
     };
     dispatch(action);
-    console.log(state);
   };
 
   const endTask = (id) => {
@@ -63,7 +43,6 @@ export const TodoComponent = () => {
     dispatch(action);
   };
 
-  const [state, dispatch] = useReducer(taskReducer, initialState);
   const { tarea, onInputChange } = useForm({ tarea: "" });
 
   return (
@@ -93,7 +72,7 @@ export const TodoComponent = () => {
         </button>
         <hr />
         <ul className="list-group">
-          {state.map((task) => {
+          {tasks.map((task) => {
             return (
               <li
                 className="list-group-item d-flex justify-content-between align-items-center"
